@@ -25,7 +25,7 @@ def generate_images_and_save(characters_list, output_directory):
         for _ in range(len(characters_list)):
             # Create an image with the registration plate
             plate_image = plt.imread(CURR_DIR_PATH + '\\empty_sign.png')
-            plt.text(x=80, y=105, s=random_plate, fontsize=70)
+            plt.text(x=80, y=105, s=random_plate, fontsize=64)
 
             # Save the image to the category folder
             image_filename = f"{random_plate}.png"
