@@ -36,3 +36,7 @@ def create_plate(number_of_plates_to_create):
 # plate1 = create_plate()
 # print(plate1)
 
+if __name__ == "__main__":
+    x = create_plate(20)
+    print(x)
+
