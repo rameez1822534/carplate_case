@@ -5,12 +5,8 @@ import matplotlib.pyplot as plt
 CURR_DIR_PATH = os.path.dirname(os.path.realpath(__file__))
 
 
-reg_list = ['APA','ARG','ASS','BAJ','BSS','CUC','CUK','DUM','ETA','ETT','FAG','FAN','FEG','FEL','FEM','FES',\
-                'FET','FNL','FUC','FUK','FUL','GAM','GAY','GEJ','GEY','GHB','GUD','GYN','HAT','HBT','HKH','HOR',\
-                'HOT','KGB','KKK','KUC','KUF','KUG','KUK','KYK','LAM','LAT','LEM','LOJ','LSD','LUS','MAD','MAO',\
-                'MEN','MES','MLB','MUS','NAZ','NRP','NSF','NYP','OND','OOO','ORM','PAJ','PKK','PLO','PMS','PUB',\
-                'RAP','RAS','ROM','RPS','RUS','SEG','SEX','SJU','SOS','SPY','SUG','SUP','SUR','TBC','TOA','TOK',\
-                'TRE','TYP','UFO','USA','WAM','WAR','WWW','XTC','XTZ','XXL','XXX','ZEX','ZOG','ZPY','ZUG','ZUP','ZOO']
+reg_list = ['APA 123','BAJ 554','BSS 532','FUK 065','CUK 275','SEX 923','FAN 368','PAJ 960','GAM 9311','GYN','HAT',\
+            'ZUP 612','HKH','TYP 023','UFO 532','USA 064','WAM 853','XTC','XTZ 041','ZEX','KKK 638','ZUG','ZOO']
 
 def generate_images_and_save(characters_list, output_directory):
     # Create the output directory if it doesn't exist
@@ -29,7 +25,7 @@ def generate_images_and_save(characters_list, output_directory):
         for _ in range(len(characters_list)):
             # Create an image with the registration plate
             plate_image = plt.imread(CURR_DIR_PATH + '\\empty_sign.png')
-            plt.text(x=80, y=105, s=random_plate, fontsize=64)
+            plt.text(x=80, y=105, s=random_plate, fontsize=64, horizontalalignment='left', fontname='Courier New')
 
             # Save the image to the category folder
             image_filename = f"{random_plate}.png"
