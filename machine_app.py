@@ -2,6 +2,8 @@ import os
 from PIL import Image
 import numpy as np
 import pandas as pd
+from sklearn.linear_model import LinearRegression
+from sklearn.model_selection import train_test_split
 
 CURR_DIR_PATH = os.path.dirname(os.path.realpath(__file__))
 output_directory = (CURR_DIR_PATH + '\\registration_images')
@@ -24,4 +26,12 @@ for root, _, files in os.walk(output_directory):
         df = pd.DataFrame([image2])
         # Add label
         df['Label'] = root[-1]
-        all_images_df = all_images_df.append(df, ignore_index=True)
+        all_images_df = pd.concat([all_images_df, df], ignore_index=True)
+        
+y = all_images_df['Label']
+all_images_df.drop(['Label'], axis=1, inplace=True)
+X = all_images_df
+model = LinearRegression()
+model.fit(X,y)
+
+
