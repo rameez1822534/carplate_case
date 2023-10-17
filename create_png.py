@@ -34,10 +34,13 @@ def generate_images_and_save(characters_list, output_directory):
             plt.savefig(image_path)
             plt.close()
 
-# Example usage:
-characters_list = reg_list
-output_directory = (CURR_DIR_PATH + '\\registration_images')
 
-generate_images_and_save(characters_list, output_directory)
 
-print("Images generated and saved.")
+if __name__ == "__main__":
+    # Example usage:
+    characters_list = reg_list
+    output_directory = (CURR_DIR_PATH + '\\registration_images')
+
+    generate_images_and_save(characters_list, output_directory)
+
+    print("Images generated and saved.")
