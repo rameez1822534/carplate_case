@@ -9,6 +9,8 @@ banned_words = ['APA','ARG','ASS','BAJ','BSS','CUC','CUK','DUM','ETA','ETT','FAG
                 'RAP','RAS','ROM','RPS','RUS','SEG','SEX','SJU','SOS','SPY','SUG','SUP','SUR','TBC','TOA','TOK',\
                 'TRE','TYP','UFO','USA','WAM','WAR','WWW','XTC','XTZ','XXL','XXX','ZEX','ZOG','ZPY','ZUG','ZUP','ZOO']
 
+banned_letters = ['I','Q','V','Å','Ä', 'Ö']
+
 CURR_DIR_PATH = os.path.dirname(os.path.realpath(__file__))
 # Load the image
 diagram_image = plt.imread(CURR_DIR_PATH + '\\empty_sign.png')
