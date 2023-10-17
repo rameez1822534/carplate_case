@@ -1,15 +1,17 @@
 Sprint 1: Testing - test with a few files
+app.py file to run all the functions together (Robert)
 
 
-Team 1:
+Team 1: Yat + Robert
 Function 1: Produce random registraton plate number
 check against forbidden words
 
 
-Team 2:
+Team 2: Araz + Khaqan
 Function 2: Print reg plate onto png
 Function 3: Save reg plate as file mame and into right folder
 Function 4: Count number of files
+
 
 
 Sprint 2: Implement and create xxx files
