@@ -5,7 +5,7 @@ import pandas as pd
 
 CURR_DIR_PATH = os.path.dirname(os.path.realpath(__file__))
 output_directory = (CURR_DIR_PATH + '\\registration_images')
-
+all_images_df = pd.DataFrame()
 for root, _, files in os.walk(output_directory):
     for filename in files:
         file_path = os.path.join(root, filename)
@@ -24,4 +24,4 @@ for root, _, files in os.walk(output_directory):
         df = pd.DataFrame([image2])
         # Add label
         df['Label'] = root[-1]
-        print(df.head())
+        all_images_df = all_images_df.append(df, ignore_index=True)
