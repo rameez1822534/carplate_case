@@ -38,20 +38,24 @@ for root, _, files in os.walk(output_directory):
 
 
 #Devide data and labels into X and y
-y = all_images_df['Label']
+# y = all_images_df['Label']
+# all_images_df.drop(['Label'], axis=1, inplace=True)
+# X = all_images_df
+
+y_test = all_images_df['Label']
 all_images_df.drop(['Label'], axis=1, inplace=True)
-X = all_images_df
+X_test = all_images_df
 
 #Train test split
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=1, random_state=42)
+# X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.5, random_state=42)
 
 #train the model
-# import pickle
-# with open("1000_model.pkl", 'rb') as file:
-#     model = pickle.load(file)
+pickle_directory = (CURR_DIR_PATH +"\\1000_model.pkl")
+with open(pickle_directory, 'rb') as file:
+    model = pickle.load(file)
 
-model = LogisticRegression()
-model.fit(X_train, y_train)
+# model = LogisticRegression()
+# model.fit(X_train, y_train)
 
 # Predict on the test set
 y_pred = model.predict(X_test)
@@ -70,8 +74,8 @@ print(classification_report(y_test, y_pred))
 filename = 'new_model.pkl'
 
 # Open a file in write-binary mode and dump the model
-with open(filename, 'wb') as file:
-    pickle.dump(model, file)
+# with open(filename, 'wb') as file:
+#     pickle.dump(model, file)
 
 
 
