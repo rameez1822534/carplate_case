@@ -35,20 +35,20 @@ def generate_images_and_save(characters_list, output_directory):
             plt.close()
 
 
-file_type = '.png'
+# file_type = '.png'
 
-def find_files(file_type, directory):
-    """Use filetype to count files in a folder and its subfolders."""
-    file_count = 0
-    for root, _, files in os.walk(directory):
-        for filename in files:
-            if filename.lower().endswith(file_type):
-                file_count += 1
+# def find_files(file_type, directory):
+#     """Use filetype to count files in a folder and its subfolders."""
+#     file_count = 0
+#     for root, _, files in os.walk(directory):
+#         for filename in files:
+#             if filename.lower().endswith(file_type):
+#                 file_count += 1
 
-    if file_count >= 1:
-        print(f"The folder and its subfolders have {file_count} {file_type} files")
-    else:
-        print(f"There are no {file_type} files in this folder and its subfolders")
+#     if file_count >= 1:
+#         print(f"The folder and its subfolders have {file_count} {file_type} files")
+#     else:
+#         print(f"There are no {file_type} files in this folder and its subfolders")
 
 
 
