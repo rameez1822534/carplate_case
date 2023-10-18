@@ -47,7 +47,7 @@ all_images_df.drop(['Label'], axis=1, inplace=True)
 X_test = all_images_df
 
 #Train test split
-# X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.5, random_state=42)
+# X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
 #train the model
 pickle_directory = (CURR_DIR_PATH +"\\1000_model.pkl")
@@ -64,18 +64,20 @@ y_pred = model.predict(X_test)
 print("Classification Report:")
 print(classification_report(y_test, y_pred))
 
-# # Plot the confusion matrix
-# cm = confusion_matrix(y_test, y_pred)
-# cm_display = ConfusionMatrixDisplay(cm, display_labels=model.classes_).plot()
-# plt.show()
+# Plot the confusion matrix
+cm = confusion_matrix(y_test, y_pred)
+cm_display = ConfusionMatrixDisplay(cm, display_labels=model.classes_).plot()
+plt.show()
 
+print("Model Classes:", model.classes_)
+print("Unique Labels in y_test:", np.unique(y_test))
 
 # Specify the path to save the model
 filename = 'new_model.pkl'
 
 # Open a file in write-binary mode and dump the model
-# with open(filename, 'wb') as file:
-#     pickle.dump(model, file)
+with open(filename, 'wb') as file:
+    pickle.dump(model, file)
 
 
 

@@ -4,7 +4,7 @@ import os
 
 CURR_DIR_PATH = os.path.dirname(os.path.realpath(__file__))
 
-for i in range(100):
+for i in range(50):
     # Chose how many reg-numbers to create
     reg_list = create_plate(1)
     # chose directory for saving the pictures
