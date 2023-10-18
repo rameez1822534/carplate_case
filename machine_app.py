@@ -43,9 +43,13 @@ all_images_df.drop(['Label'], axis=1, inplace=True)
 X = all_images_df
 
 #Train test split
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=1, random_state=42)
 
 #train the model
+# import pickle
+# with open("1000_model.pkl", 'rb') as file:
+#     model = pickle.load(file)
+
 model = LogisticRegression()
 model.fit(X_train, y_train)
 
@@ -63,7 +67,7 @@ print(classification_report(y_test, y_pred))
 
 
 # Specify the path to save the model
-filename = '1000_model.pkl'
+filename = 'new_model.pkl'
 
 # Open a file in write-binary mode and dump the model
 with open(filename, 'wb') as file:
