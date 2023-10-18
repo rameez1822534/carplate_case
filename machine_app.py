@@ -31,7 +31,17 @@ for root, _, files in os.walk(output_directory):
 y = all_images_df['Label']
 all_images_df.drop(['Label'], axis=1, inplace=True)
 X = all_images_df
+# Take out training data
+X_train, X_test,y_train, y_test = train_test_split(
+    X, y, test_size=0.2)
+# Create model
 model = LinearRegression()
-model.fit(X,y)
+model.fit(X_train,y_train)
+# create a predictions 
+y_predict = model.predict(X_test)
+
+
+
+
 
 
